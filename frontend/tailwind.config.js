@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        ring: "rgba(0, 0, 0, 0.5)",  // Define the "ring" color
+      },
+    },
   },
   plugins: [],
-}
+};

@@ -1,14 +1,21 @@
-import { createContext, useContext, useState } from "react";
+// src/context/AuthContext.tsx
+import { createContext, useContext, useState, ReactNode } from "react";
 
-const AuthContext = createContext(null);
+const AuthContext = createContext<any>(null);
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState(null);
 
   const login = async (email: string, password: string) => {
-    // TODO: Replace with actual API call
-    setUser({ email, name: "Test User", major: "CS" });
-    return true;
+    // Replace this with your API call for authentication.
+    try {
+      // Example API call: const response = await fetch('/api/auth/login', { ... });
+      // On success, set user data from response:
+      setUser({ email, name: "Example User", major: "CS", deltaNumber: "12345" });
+      return true;
+    } catch (error) {
+      return false;
+    }
   };
 
   const logout = () => setUser(null);

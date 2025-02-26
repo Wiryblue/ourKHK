@@ -1,20 +1,31 @@
-import { Link } from "react-router-dom";
+import {
+    Menubar,
+    MenubarContent,
+    MenubarItem,
+    MenubarMenu,
+    MenubarSeparator,
+    MenubarShortcut,
+    MenubarTrigger,
+  } from "../components/ui/menubar"
+function NavBar() {
+  
+  return(
+    <Menubar>
+    <MenubarMenu>
+      <MenubarTrigger>File</MenubarTrigger>
+      <MenubarContent>
+        <MenubarItem>
+          New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+        </MenubarItem>
+        <MenubarItem>New Window</MenubarItem>
+        <MenubarSeparator />
+        <MenubarItem>Share</MenubarItem>
+        <MenubarSeparator />
+        <MenubarItem>Print</MenubarItem>
+      </MenubarContent>
+    </MenubarMenu>
+  </Menubar>
+);
+}
 
-const Navbar = () => {
-  return (
-    <nav className="bg-blue-600 text-white p-4">
-      <div className="container mx-auto flex justify-between">
-        <h1 className="text-xl font-bold">KHK Portal</h1>
-        <div>
-          <Link className="mx-2" to="/dashboard">Dashboard</Link>
-          <Link className="mx-2" to="/profile">Profile</Link>
-          <Link className="mx-2" to="/events">Events</Link>
-          <Link className="mx-2" to="/financial">Finance</Link>
-          <Link className="mx-2" to="/materials">Materials</Link>
-        </div>
-      </div>
-    </nav>
-  );
-};
-
-export default Navbar;
+export default NavBar;
