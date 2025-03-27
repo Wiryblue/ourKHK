@@ -1,8 +1,13 @@
 import React, { use } from 'react'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useContext } from 'react'
+import AuthContext from "./context/AuthProvider"
+import axios from './api/axios'
+const LOGIN_URL = '/auth'
 
 const Login = () => {
-    // We have this so we can set the focus on the first input when the component loads
+
+    const {setAuth} = useContext(AuthContext);
+    // So we can set focus on the first input when the component loads
     const userRef = useRef();
     // We'll need to set the focus on the errors for screen readers or other assitive tech to read if an error occurs
     const errRed = useRef();
@@ -26,11 +31,35 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(user, pwd);
-        setUser('');
-        setPwd('');
-        // The below is a placeholder for the fetch request we'll make to the server
-        setSuccess(true);
+        
+        try {
+            const response = await axios.post(LOGIN_URL,
+                JSON.stringify({user, pwd}),
+                {headers: {'Content-Type': 'application/json'},
+                withCredentials: true
+                }
+            );
+            console.log(JSON.stringify(response?.data))
+            //console.log(JSON.stringify(response))
+            const accessToken = response?.data?.accessToken;
+            // IMP: REFER TO HIS 9 HOUR INTRO FOR THIS. THIS AND BACKEND IS SETUP THROUGH THAT
+            const roles = response?.data?.roles;
+            setAuth({user, pwd, roles, accessToken});
+            setUser('');
+            setPwd('');
+            setSuccess(true);
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if (err.response?.status === 400) {
+                setErrMsg('Missing Username or Password');
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized');
+            } else {
+                setErrMsg('Login Failed');
+            }
+            errRef.current.focus();
+        }
     }
 
     return (
