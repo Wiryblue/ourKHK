@@ -1,12 +1,17 @@
 // src/App.tsx
-import { Button } from "@/components/ui/button"
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
 
 
 function App() {
+
+
+
+
+
   return (
-    <div className="flex items-center justify-center h-screen">
-    <Button >Click me</Button>
-  </div>
+    <Home/>
   );
 }
 
