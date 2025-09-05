@@ -22,13 +22,13 @@ import LoggedHome from './LoggedHome.tsx'
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA24R0NTm4FXwUFV9etUNZLQSEWT2tQQB4",
-  authDomain: "authentication-691f5.firebaseapp.com",
-  projectId: "authentication-691f5",
-  storageBucket: "authentication-691f5.firebasestorage.app",
-  messagingSenderId: "413134776737",
-  appId: "1:413134776737:web:a4f2397ca6fb57653283e0",
-  measurementId: "G-BW7LL81XG9"
+  apiKey: "AIzaSyCME_X86gEQYJBu9v-n0tY_Sh_y5N2h4Q0",
+  authDomain: "ourkhk-af04e.firebaseapp.com",
+  projectId: "ourkhk-af04e",
+  storageBucket: "ourkhk-af04e.firebasestorage.app",
+  messagingSenderId: "342932836626",
+  appId: "1:342932836626:web:b06b123dd85a17d40523cb",
+  measurementId: "G-5RJ7KQZ5QM"
 };
 
 // Initialize Firebase
