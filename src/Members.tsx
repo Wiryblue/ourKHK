@@ -13,13 +13,13 @@ function MemberPage() {
         <p className="">Click LinkedIn to connect.</p>
       </header>
 
-      <section
-        className="grid grid-cols-3 w-4/5"
+      <div
+        className="grid grid-cols-4 gap-40 px-10"
         aria-label="Members list">
         {members.map((m) => (
           <MemberCard key={m.id} member={m} />
         ))}
-      </section>    
+      </div>    
     </div>
   );
 }

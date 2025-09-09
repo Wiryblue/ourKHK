@@ -51,8 +51,8 @@ function NavBar() {
     return (
         <nav className="nav w-full bg-purple-900">
             <ul className="flex justify-evenly items-center text-white py-3">
-                <Link to="/" className="site-title">KHK Delta (Home)</Link>
-                <CustomLink to="/about">About (includes Posts)</CustomLink>
+                <Link to="/" className="site-title">Home</Link>
+                <CustomLink to="/about">About</CustomLink>
                 <CustomLink to="/events">Events</CustomLink>
                 <CustomLink to="/members">Members</CustomLink>
                 <CustomLink to="/login">Login</CustomLink>
