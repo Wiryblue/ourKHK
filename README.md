@@ -7,6 +7,17 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Getting Started
+
+> [!Note]
+> Tested on Ubuntu 22.04.5 LTS on WSL
+1. Clone the repository
+2. Install vite (eg. `sudo apt install vite`)
+3. Install NodeJS. Follow instructions from https://nodejs.org/en/download. I used version 22
+4. Install dependencies: `npm install`
+5. Run your server: `npm run dev`
+6. Open your server: http://localhost:5173/
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
